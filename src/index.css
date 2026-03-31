@@ -18,9 +18,11 @@ html {
 body {
   margin: 0;
   background: radial-gradient(1200px 800px at 18% 14%, rgba(148, 50, 35, 0.26), transparent 60%),
-    radial-gradient(900px 600px at 70% 12%, rgba(205, 139, 85, 0.16), transparent 55%),
-    radial-gradient(900px 700px at 70% 92%, rgba(148, 50, 35, 0.14), transparent 60%),
-    linear-gradient(180deg, var(--bg0), var(--bg1));
+    radial-gradient(900px 600px at 70% 12%, rgba(205, 139, 85, 0.08), transparent 55%),
+    radial-gradient(900px 700px at 70% 92%, rgba(148, 50, 35, 0.06), transparent 60%),
+    linear-gradient(120deg, var(--bg0), #121010, #1b1512, var(--bg1));
+  background-size: 280% 280%;
+  animation: bg-shift 16s ease-in-out infinite;
   color: var(--ink);
   font-family: 'Spline Sans', system-ui, 'Segoe UI', sans-serif;
   text-rendering: geometricPrecision;
@@ -89,5 +91,21 @@ body {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+  body {
+    animation: none;
+    background-position: 0 0;
+  }
+}
+
+@keyframes bg-shift {
+  0% {
+    background-position: 0% 15%;
+  }
+  50% {
+    background-position: 100% 85%;
+  }
+  100% {
+    background-position: 0% 15%;
   }
 }

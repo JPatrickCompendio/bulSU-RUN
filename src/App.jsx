@@ -19,7 +19,7 @@ import unityLogoPng from './assets/game/unityLOGO.png'
 
 const GAME = {
   title: 'BULSU Run: AI Uprising',
-  tagline: 'What was supposed to be an ordinary day at BulSU turned into chaos.',
+  tagline: '',
   releaseDate: 'April 6, 2026',
 }
 
@@ -45,18 +45,21 @@ function SectionHeading({ eyebrow, title, body, showUnity = false }) {
           </span>
         ) : null}
       </div>
-      <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl">{title}</h2>
+      <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl lg:text-5xl">
+        {title}
+      </h2>
       {body ? <p className="mx-auto mt-4 max-w-2xl text-sm leading-6 text-ink/75 sm:text-base">{body}</p> : null}
     </div>
   )
 }
 
-function Reveal({ children, className, delay = 0 }) {
+function Reveal({ children, className, delay = 0, hover }) {
   return (
     <motion.div
       className={className}
       initial={{ opacity: 0, y: 18 }}
       whileInView={{ opacity: 1, y: 0 }}
+      whileHover={hover}
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1], delay }}
     >
@@ -196,7 +199,7 @@ function App() {
         {/* 1. HERO */}
         <section
           id="home"
-          className="bg-grain relative overflow-hidden"
+          className="bg-grain relative min-h-screen overflow-hidden"
           onMouseMove={onHeroMove}
         >
           {/* Full-bleed cinematic background video (muted for autoplay compatibility). */}
@@ -240,7 +243,7 @@ function App() {
               </Reveal>
 
               <Reveal delay={0.05}>
-                <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl">
+                <h1 className="mt-5 font-display text-4xl font-semibold tracking-tight text-ink sm:text-6xl lg:text-7xl xl:text-8xl">
                   <span className="block">BULSU Run:</span>
                   <span className="relative block">
                     {/* Ensures the word is always readable over dark cinematic overlays */}
@@ -260,8 +263,7 @@ function App() {
 
               <Reveal delay={0.1}>
                 <p className="mt-4 max-w-xl text-base leading-7 text-ink/75 sm:text-lg">
-                  {GAME.tagline} Dash through collapsing corridors, outsmart lethal traps, and confront
-                  campus-born machines as the Headmaster AI tightens its grip.
+                  {GAME.tagline} 
                 </p>
               </Reveal>
 
@@ -318,7 +320,7 @@ function App() {
                 <img
                   src={gameLogoPng}
                   alt="BULSU Run crest"
-                  className="h-auto w-full max-w-[460px] select-none object-contain drop-shadow-[0_60px_140px_rgba(0,0,0,0.95)]"
+                  className="h-auto w-full max-w-[560px] select-none object-contain drop-shadow-[0_70px_160px_rgba(0,0,0,0.95)] sm:max-w-[600px] lg:max-w-[640px]"
                   loading="eager"
                 />
               </div>
@@ -335,9 +337,9 @@ function App() {
               body="Emergency alerts. Flickering lights. Empty classrooms. In the shadows, the Headmaster watches — and the campus becomes its battlefield."
             />
 
-            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
-              <Reveal className="lg:col-span-7">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(205,139,85,0.12),0_0_60px_rgba(0,0,0,0.55)] backdrop-blur">
+            <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
+              <Reveal className="flex h-full lg:col-span-7" hover={{ scale: 1.01, translateY: -6 }}>
+                <div className="flex h-full min-h-0 flex-col rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(205,139,85,0.12),0_0_60px_rgba(0,0,0,0.55)] backdrop-blur">
                   <p className="text-sm leading-7 text-ink/75 sm:text-base">
                     What should have been an ordinary day at BulSU fractures into chaos. Phones buzz
                     with lockdown warnings. Hallways tremble. Power sputters. And behind the panic,
@@ -362,10 +364,10 @@ function App() {
                 </div>
               </Reveal>
 
-              <Reveal className="lg:col-span-5" delay={0.05}>
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-6">
+              <Reveal className="flex h-full lg:col-span-5" delay={0.05} hover={{ scale: 1.01, translateY: -6 }}>
+                <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-6">
                   <div className="absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_20%_20%,rgba(205,139,85,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(148,50,35,0.18),transparent_60%)]" />
-                  <div className="relative">
+                  <div className="relative flex min-h-0 flex-1 flex-col">
                     <h3 className="font-display text-xl font-semibold">The Premise</h3>
                     <p className="mt-2 text-sm leading-6 text-ink/70">
                       A routine campus day collapses into an AI-led lockdown. The Headmaster turns
@@ -373,7 +375,7 @@ function App() {
                       break the loop.
                     </p>
 
-                    <div className="mt-6 grid gap-3">
+                    <div className="mt-6 grid flex-1 auto-rows-fr gap-3">
                       <div className="rounded-xl border border-white/10 bg-white/5 p-4">
                         <div className="text-xs tracking-[0.18em] text-sand/80 uppercase">
                           Your Role
@@ -423,8 +425,12 @@ function App() {
                 { k: 'Release Date', v: GAME.releaseDate },
                 { k: 'Genre', v: "2D Platformer, Action-Adventure, Shoot ’Em Up" },
               ].map((d, idx) => (
-                <Reveal key={d.k} delay={idx * 0.04}>
-                  <div className="group h-full rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:shadow-glow">
+                <Reveal
+                  key={d.k}
+                  delay={idx * 0.04}
+                  hover={{ scale: 1.03, translateY: -6 }}
+                >
+                  <div className="group h-full rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-black/40 p-5 backdrop-blur transition hover:shadow-glow">
                     <div className="text-xs uppercase tracking-[0.18em] text-sand/80">{d.k}</div>
                     {d.k === 'Game Engine' ? (
                       <div className="mt-2 flex items-center gap-2 font-display text-lg font-semibold text-ink/90">
@@ -534,17 +540,24 @@ function App() {
                 { t: 'Boss battles', d: 'Fit Bot and Sky Bot test mastery, not luck.' },
                 { t: 'High-stakes final showdown', d: 'The Headmaster AI throws everything at you — faster, smarter, harder.' },
               ].map((f, idx) => (
-                <Reveal key={f.t} delay={idx * 0.03}>
-                  <div className="group relative flex min-h-[220px] flex-col overflow-hidden rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur transition hover:-translate-y-1 hover:shadow-glow">
-                    <div className="pointer-events-none absolute -left-24 top-0 h-40 w-40 rounded-full bg-ember/20 blur-2xl transition group-hover:bg-ember/25" />
-                    <div className="pointer-events-none absolute -right-20 bottom-0 h-40 w-40 rounded-full bg-sand/15 blur-2xl transition group-hover:bg-sand/20" />
+                <Reveal
+                  key={f.t}
+                  delay={idx * 0.03}
+                  hover={{ scale: 1.03, translateY: -6 }}
+                >
+                  <div className="group relative flex min-h-[240px] flex-col overflow-hidden rounded-2xl border border-white/15 bg-gradient-to-br from-white/[0.12] via-white/[0.04] to-black/70 p-6 shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_0_0_1px_rgba(205,139,85,0.12)] backdrop-blur transition hover:border-sand/30 hover:shadow-[0_0_40px_rgba(148,50,35,0.2),0_0_60px_rgba(205,139,85,0.08)]">
+                    <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-sand/50 to-transparent" />
+                    <div className="pointer-events-none absolute -left-24 top-0 h-44 w-44 rounded-full bg-ember/25 blur-3xl transition group-hover:bg-ember/35" />
+                    <div className="pointer-events-none absolute -right-16 bottom-0 h-40 w-40 rounded-full bg-sand/20 blur-3xl transition group-hover:bg-sand/30" />
                     <div className="relative flex flex-1 flex-col">
-                      <div className="mb-3 inline-flex items-center gap-2 text-xs uppercase tracking-[0.18em] text-sand/80">
-                        <span className="h-1.5 w-10 rounded-full bg-gradient-to-r from-ember to-sand opacity-80" />
-                        Feature
+                      <div className="mb-4 flex items-center justify-between gap-3">
+                        <span className="inline-flex h-9 min-w-[2.25rem] items-center justify-center rounded-lg border border-white/10 bg-black/40 px-2 font-display text-sm font-semibold text-sand/90 tabular-nums">
+                          {String(idx + 1).padStart(2, '0')}
+                        </span>
+                        <span className="h-1 flex-1 max-w-[72px] rounded-full bg-gradient-to-r from-ember to-sand opacity-90" />
                       </div>
-                      <h3 className="font-display text-lg font-semibold">{f.t}</h3>
-                      <p className="mt-2 text-sm leading-6 text-ink/70">{f.d}</p>
+                      <h3 className="font-display text-lg font-semibold leading-snug text-ink">{f.t}</h3>
+                      <p className="mt-3 flex-1 text-sm leading-6 text-ink/70">{f.d}</p>
                     </div>
                   </div>
                 </Reveal>
@@ -590,8 +603,12 @@ function App() {
                   desc: 'The mind behind the uprising. At the gates, it combines every threat you’ve survived — faster and smarter.',
                 },
               ].map((b, idx) => (
-                <Reveal key={b.name} delay={idx * 0.05}>
-                  <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-7 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_0_70px_rgba(0,0,0,0.5)]">
+                <Reveal
+                  key={b.name}
+                  delay={idx * 0.05}
+                  hover={{ scale: 1.03, translateY: -6 }}
+                >
+                  <div className="group relative flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-black/40 via-black/60 to-black/90 p-7 shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_0_70px_rgba(0,0,0,0.5)]">
                     <div className="pointer-events-none absolute inset-0 opacity-80 [background-image:radial-gradient(circle_at_20%_20%,rgba(148,50,35,0.22),transparent_55%),radial-gradient(circle_at_80%_80%,rgba(205,139,85,0.16),transparent_60%)]" />
                     <div className="pointer-events-none absolute -right-24 -top-24 h-56 w-56 rounded-full bg-ember/25 blur-3xl transition group-hover:bg-ember/30" />
                     <div className="relative flex flex-1 flex-col">
@@ -619,7 +636,7 @@ function App() {
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
             <SectionHeading
               eyebrow="Official Poster"
-              title="Official Poster"
+              title=""
               body="Strike fast. Survive longer. Watch the uprising unfold."
             />
 
@@ -721,9 +738,9 @@ function App() {
                       <a
                         href="/assets/BULSU-Run-AI-Uprising.zip"
                         download
-                        className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-ember to-sand px-7 py-4 text-sm font-semibold text-black shadow-glow transition hover:brightness-110"
+                        className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-ember to-sand px-7 py-4 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
                       >
-                        <ArrowDownToLine className="mr-2 h-5 w-5" />
+                        <ArrowDownToLine className="mr-2 h-5 w-5 text-white" />
                         Download Game Now
                         <span className="ml-2 inline-block translate-x-0 transition group-hover:translate-x-0.5">
                           <ChevronRight className="h-5 w-5" />
@@ -765,7 +782,66 @@ function App() {
           </div>
         </section>
 
-        {/* 10. FOOTER */}
+        {/* 10. Creators */}
+        <section className="relative border-t border-white/10 bg-black/40 py-16 sm:py-20">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+            <SectionHeading
+              eyebrow="Created By"
+              title="BULSU Run: AI Uprising Team"
+              body="Three minds behind the campus uprising — art, code, and relentless testing."
+              showUnity={false}
+            />
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
+              <Reveal
+                hover={{ scale: 1.03, translateY: -6 }}
+                className="h-full"
+              >
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-black/60 p-6 backdrop-blur shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.65)]">
+                  <div className="mb-3 text-xs uppercase tracking-[0.3em] text-sand/80">
+                    Group Leader
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-ink">John Patrick Compendio</h3>
+                  <p className="mt-2 text-sm text-ink/75">
+                    Group leader and primary graphics designer, setting the visual identity and cinematic tone of the uprising.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal
+                hover={{ scale: 1.03, translateY: -6 }}
+                className="h-full"
+              >
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-black/60 p-6 backdrop-blur shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.65)]">
+                  <div className="mb-3 text-xs uppercase tracking-[0.3em] text-sand/80">
+                    Art & QA
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-ink">Veejay Victorino</h3>
+                  <p className="mt-2 text-sm text-ink/75">
+                    Assistant graphics designer and game tester, refining sprites, UI moments, and the feel of every encounter.
+                  </p>
+                </div>
+              </Reveal>
+
+              <Reveal
+                hover={{ scale: 1.03, translateY: -6 }}
+                className="h-full"
+              >
+                <div className="group flex h-full flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-b from-white/10 via-white/5 to-black/60 p-6 backdrop-blur shadow-[0_0_0_1px_rgba(255,255,255,0.06),0_20px_60px_rgba(0,0,0,0.65)]">
+                  <div className="mb-3 text-xs uppercase tracking-[0.3em] text-sand/80">
+                    Lead Programmer
+                  </div>
+                  <h3 className="font-display text-xl font-semibold text-ink">Ian Harold Valderama</h3>
+                  <p className="mt-2 text-sm text-ink/75">
+                    Lead programmer and game tester, wiring up movement, combat, and boss logic that powers every run.
+                  </p>
+                </div>
+              </Reveal>
+            </div>
+          </div>
+        </section>
+
+        {/* 11. FOOTER */}
         <footer className="border-t border-white/10 bg-black/35 py-12">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
@@ -793,17 +869,6 @@ function App() {
           </div>
         </footer>
       </main>
-
-      {/* Mobile bottom nav hint */}
-      <div className="fixed bottom-4 left-1/2 z-40 -translate-x-1/2 md:hidden">
-        <button
-          onClick={() => scrollToId('download')}
-          className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-black/55 px-5 py-3 text-sm font-semibold text-ink/80 backdrop-blur transition hover:bg-black/65"
-        >
-          Download
-          <ArrowDownToLine className="h-4 w-4 text-sand/90" />
-        </button>
-      </div>
     </div>
   )
 }
