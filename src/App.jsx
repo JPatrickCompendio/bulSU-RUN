@@ -705,10 +705,6 @@ function App() {
                     }}
                   />
 
-                  <div className="absolute bottom-4 left-4 flex items-center gap-2 rounded-full border border-white/10 bg-black/45 px-4 py-2 text-xs text-ink/70 backdrop-blur">
-                    <img src={unityLogoPng} alt="Unity logo" className="h-4 w-4" loading="eager" />
-                    <span>Trailer • Powered by Unity</span>
-                  </div>
                 </div>
               </div>
             </Reveal>
