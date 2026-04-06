@@ -89,6 +89,7 @@ function App() {
       { id: 'poster', label: 'Poster' },
       { id: 'trailer', label: 'Trailer' },
       { id: 'download', label: 'Download' },
+      { id: 'contact', label: 'Contact' },
     ],
     [],
   )
@@ -736,8 +737,9 @@ function App() {
                     </p>
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <a
-                        href="/assets/BULSU-Run-AI-Uprising.zip"
-                        download
+                        href="https://www.mediafire.com/file/k5ryk9n7evtd7an/BulsuRun_Version_36.apk/file"
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-ember to-sand px-7 py-4 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
                       >
                         <ArrowDownToLine className="mr-2 h-5 w-5 text-white" />
@@ -754,9 +756,7 @@ function App() {
                         Watch Trailer
                       </button>
                     </div>
-                    <div className="mt-4 text-xs text-ink/55">
-                      Placeholder download path: <code className="rounded bg-white/10 px-2 py-1">/public/assets/BULSU-Run-AI-Uprising.zip</code>
-                    </div>
+                    <div className="mt-4 text-xs text-ink/55">Download is hosted on MediaFire.</div>
                   </div>
 
                   <div className="lg:col-span-5">
@@ -841,7 +841,34 @@ function App() {
           </div>
         </section>
 
-        {/* 11. FOOTER */}
+        {/* 11. CONTACT */}
+        <section id="contact" className="relative border-t border-white/10 py-18 sm:py-24">
+          <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
+            <SectionHeading
+              eyebrow="Contact"
+              title="Comments & Suggestions"
+              body="Have feedback about gameplay, bugs, or ideas for improvements? Send us an email."
+            />
+
+            <Reveal>
+              <div className="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-white/5 p-6 text-center shadow-[0_0_0_1px_rgba(205,139,85,0.12),0_0_60px_rgba(0,0,0,0.55)] backdrop-blur sm:p-8">
+                <div className="text-sm text-ink/75">Email us at</div>
+                <a
+                  href="mailto:mtrx.virtue445@gmail.com?subject=BULSU%20Run%20Comment%20or%20Suggestion"
+                  className="mt-3 inline-flex items-center gap-2 rounded-xl border border-sand/35 bg-black/35 px-5 py-3 font-display text-base text-sand transition hover:bg-black/50 hover:text-ink sm:text-lg"
+                >
+                  <LinkIcon className="h-4 w-4" />
+                  mtrx.virtue445@gmail.com
+                </a>
+                <p className="mt-4 text-xs text-ink/60">
+                  We appreciate your feedback and suggestions for the next updates.
+                </p>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+
+        {/* 12. FOOTER */}
         <footer className="border-t border-white/10 bg-black/35 py-12">
           <div className="mx-auto w-full max-w-7xl px-4 sm:px-6">
             <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
