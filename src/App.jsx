@@ -733,7 +733,7 @@ function App() {
                     </p>
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <a
-                        href="https://www.mediafire.com/file/k5ryk9n7evtd7an/BulsuRun_Version_36.apk/file"
+                        href="https://www.mediafire.com/file/a44wejpvuychduh/BulsuRun_Completed_14.apk/file"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-ember to-sand px-7 py-4 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
