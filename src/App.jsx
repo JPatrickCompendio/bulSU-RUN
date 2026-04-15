@@ -339,7 +339,7 @@ function App() {
             />
 
             <div className="grid grid-cols-1 gap-6 lg:grid-cols-12 lg:items-stretch">
-              <Reveal className="flex h-full lg:col-span-7" hover={{ scale: 1.01, translateY: -6 }}>
+              <Reveal className="flex h-full lg:col-span-12" hover={{ scale: 1.01, translateY: -6 }}>
                 <div className="flex h-full min-h-0 flex-col rounded-2xl border border-white/10 bg-white/5 p-6 shadow-[0_0_0_1px_rgba(205,139,85,0.12),0_0_60px_rgba(0,0,0,0.55)] backdrop-blur">
                   <p className="text-sm leading-7 text-ink/75 sm:text-base">
                     What should have been an ordinary day at BulSU fractures into chaos. Phones buzz
@@ -362,47 +362,6 @@ function App() {
                     everything you’ve endured: rockets, drones, trash attacks, and lightning-fast
                     assaults. There’s no reset. No mercy. Only momentum.
                   </p>
-                </div>
-              </Reveal>
-
-              <Reveal className="flex h-full lg:col-span-5" delay={0.05} hover={{ scale: 1.01, translateY: -6 }}>
-                <div className="relative flex h-full min-h-0 flex-col overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-6">
-                  <div className="absolute inset-0 opacity-70 [background-image:radial-gradient(circle_at_20%_20%,rgba(205,139,85,0.18),transparent_60%),radial-gradient(circle_at_70%_60%,rgba(148,50,35,0.18),transparent_60%)]" />
-                  <div className="relative flex min-h-0 flex-1 flex-col">
-                    <h3 className="font-display text-xl font-semibold">The Premise</h3>
-                    <p className="mt-2 text-sm leading-6 text-ink/70">
-                      A routine campus day collapses into an AI-led lockdown. The Headmaster turns
-                      familiar landmarks into lethal trials — and you’re the only one fast enough to
-                      break the loop.
-                    </p>
-
-                    <div className="mt-6 grid flex-1 auto-rows-fr gap-3">
-                      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                        <div className="text-xs tracking-[0.18em] text-sand/80 uppercase">
-                          Your Role
-                        </div>
-                        <div className="mt-1 text-sm text-ink/80">
-                          Runner • Rescuer • Resistance
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                        <div className="text-xs tracking-[0.18em] text-sand/80 uppercase">
-                          Core Loop
-                        </div>
-                        <div className="mt-1 text-sm text-ink/80">
-                          Sprint • Shoot • Survive • Boss Rush
-                        </div>
-                      </div>
-                      <div className="rounded-xl border border-white/10 bg-white/5 p-4">
-                        <div className="text-xs tracking-[0.18em] text-sand/80 uppercase">
-                          Choice Moment
-                        </div>
-                        <div className="mt-1 text-sm text-ink/80">
-                          Pancho Hall routes: safe pace or dangerous rewards
-                        </div>
-                      </div>
-                    </div>
-                  </div>
                 </div>
               </Reveal>
             </div>
@@ -779,7 +738,7 @@ function App() {
                     </p>
                     <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                       <a
-                        href="https://www.mediafire.com/file/a44wejpvuychduh/BulsuRun_Completed_14.apk/file"
+                        href="https://www.mediafire.com/file/ubg7rzp8i5uzwfo/BulsuRun.apk/file"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="group inline-flex items-center justify-center rounded-xl bg-gradient-to-r from-ember to-sand px-7 py-4 text-sm font-semibold text-white shadow-glow transition hover:brightness-110"
