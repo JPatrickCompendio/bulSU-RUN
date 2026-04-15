@@ -466,26 +466,36 @@ function App() {
                   title: 'CBA Building',
                   body:
                     'Crumbling hallways and blackout corridors. Learn the rhythm: jump timing, quick shots, and the first real traps.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272288/Screen_Recording_20260416_002503_gcaonk.mp4',
                 },
                 {
                   title: 'Activity Center',
                   body:
                     'The Fit Bot turns training into punishment. Survive relentless pressure and earn the confidence to keep moving.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272282/Screen_Recording_20260416_003223_ylxewy.mp4',
                 },
                 {
                   title: 'Admin Building',
                   body:
-                    'Rooftop winds, failing lights, and Sky Bot’s aerial hunt. One slip, and you fall back into the swarm.',
+                    'Your mission turns urgent: locate survivors across the campus and escort them to the Admin Building — the last safe rally point before the final push.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272279/Screen_Recording_20260416_003505_c5e4je.mp4',
                 },
                 {
                   title: 'Pancho Hall',
                   body:
                     'Choices matter. Safe route for a steady pace — or gamble on danger for bigger rewards and hidden discoveries.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272280/Screen_Recording_20260416_003556_zy1wf9.mp4',
                 },
                 {
                   title: 'Campus Gates',
                   body:
                     'The last stretch. The Headmaster AI unleashes rockets, drones, trash attacks, and lightning-fast assaults.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272295/Screen_Recording_20260416_003721_pqb65s.mp4',
                 },
               ].map((step, i) => {
                 const isRight = i % 2 === 1
@@ -499,6 +509,20 @@ function App() {
                             <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-white/10 bg-black/30 text-sm text-sand/90">
                               {String(i + 1).padStart(2, '0')}
                             </span>
+                          </div>
+                          <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-black/35">
+                            <div className="relative aspect-[3/2]">
+                              <video
+                                className="absolute inset-0 h-full w-full object-cover"
+                                src={step.videoUrl}
+                                autoPlay
+                                muted
+                                loop
+                                playsInline
+                                controls
+                                preload="metadata"
+                              />
+                            </div>
                           </div>
                           <p className="mt-3 text-sm leading-6 text-ink/70">{step.body}</p>
                         </div>
@@ -582,26 +606,36 @@ function App() {
                   name: 'Trash Lord',
                   vibe: 'First wave',
                   desc: 'A towering heap of corrupted campus trash brought to life. Lobs debris, blocks routes, and teaches you to respect chaos.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273654/Screen_Recording_20260416_011225_qyqplz.mp4',
                 },
                 {
                   name: 'Fit Bot',
                   vibe: 'Relentless pressure',
                   desc: 'A training unit turned executioner. It hunts your stamina, punishes hesitation, and forces perfect movement.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273742/Screen_Recording_20260416_011321_btcusm.mp4',
                 },
                 {
                   name: 'Sky Bot',
                   vibe: 'Aerial predator',
                   desc: 'A rooftop enforcer that rains precision attacks from above. Stay exposed too long, and it ends the run.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273725/Screen_Recording_20260416_011425_exbv5q.mp4',
                 },
                 {
                   name: 'Chase Bot',
                   vibe: 'Relentless pursuit',
                   desc: 'Pursues you through narrow halls and open quads, punishing slow reactions with sudden dashes and sweeping attacks.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273729/Screen_Recording_20260416_011506_fvsmpx.mp4',
                 },
                 {
                   name: 'Headmaster AI',
                   vibe: 'Final authority',
                   desc: 'The mind behind the uprising. At the gates, it combines every threat you’ve survived — faster and smarter.',
+                  videoUrl:
+                    'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273736/Screen_Recording_20260416_003721_1_jcnmq0.mp4',
                 },
               ].map((b, idx) => (
                 <Reveal
@@ -618,6 +652,20 @@ function App() {
                         <span className="rounded-full border border-white/10 bg-white/5 px-3 py-2 text-xs uppercase tracking-[0.18em] text-sand/80">
                           {b.vibe}
                         </span>
+                      </div>
+                      <div className="mt-4 overflow-hidden rounded-xl border border-white/10 bg-black/35">
+                        <div className="relative aspect-[3/2]">
+                          <video
+                            className="absolute inset-0 h-full w-full object-cover"
+                            src={b.videoUrl}
+                            autoPlay
+                            muted
+                            loop
+                            playsInline
+                            controls
+                            preload="metadata"
+                          />
+                        </div>
                       </div>
                       <p className="mt-3 text-sm leading-6 text-ink/70">{b.desc}</p>
                       <div className="mt-6 h-1.5 w-full overflow-hidden rounded-full bg-white/5">
