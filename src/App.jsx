@@ -486,7 +486,7 @@ function App() {
                 {
                   title: 'Pancho Hall',
                   body:
-                    'Choices matter. Safe route for a steady pace — or gamble on danger for bigger rewards and hidden discoveries.',
+                    'Rescue mission: find the Dean inside Pancho Hall, clear the danger around them, and get them out safely before the lockdown tightens.',
                   videoUrl:
                     'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776272280/Screen_Recording_20260416_003556_zy1wf9.mp4',
                 },
@@ -560,8 +560,6 @@ function App() {
                 { t: 'Jumping over debris', d: 'Broken campus infrastructure becomes your obstacle course.' },
                 { t: 'Dodging explosive traps', d: 'Bait, dodge, and commit — one bad read ends the run.' },
                 { t: 'Fighting robotic enemies', d: 'Shoot back, break patterns, and control the lane.' },
-                { t: 'Branching routes in Pancho Hall', d: 'Play it safe or risk it all for rewards and secrets.' },
-                { t: 'Secret discoveries', d: 'Hidden paths, small story clues, and power-ups for the bold.' },
                 { t: 'Boss battles', d: 'Fit Bot and Sky Bot test mastery, not luck.' },
                 { t: 'High-stakes final showdown', d: 'The Headmaster AI throws everything at you — faster, smarter, harder.' },
               ].map((f, idx) => (
@@ -605,14 +603,14 @@ function App() {
                 {
                   name: 'Trash Lord',
                   vibe: 'First wave',
-                  desc: 'A towering heap of corrupted campus trash brought to life. Lobs debris, blocks routes, and teaches you to respect chaos.',
+                  desc: 'Take down the Trash Bot by attacking until its health drops low — but stay sharp and dodge the trash it throws at you.',
                   videoUrl:
                     'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273654/Screen_Recording_20260416_011225_qyqplz.mp4',
                 },
                 {
                   name: 'Fit Bot',
                   vibe: 'Relentless pressure',
-                  desc: 'A training unit turned executioner. It hunts your stamina, punishes hesitation, and forces perfect movement.',
+                  desc: 'A training unit turned executioner. It punishes hesitation and forces clean movement under pressure.',
                   videoUrl:
                     'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273742/Screen_Recording_20260416_011321_btcusm.mp4',
                 },
@@ -626,7 +624,7 @@ function App() {
                 {
                   name: 'Chase Bot',
                   vibe: 'Relentless pursuit',
-                  desc: 'Pursues you through narrow halls and open quads, punishing slow reactions with sudden dashes and sweeping attacks.',
+                  desc: 'Run for your life and keep moving until the robot starts to malfunction — survive long enough and the chase breaks.',
                   videoUrl:
                     'https://res.cloudinary.com/dfiiso9ad/video/upload/v1776273729/Screen_Recording_20260416_011506_fvsmpx.mp4',
                 },
